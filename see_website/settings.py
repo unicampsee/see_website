@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'maro_auth.apps.AuthConfig',
     'eventos.apps.EventosConfig',
+    'see_profile.apps.SeeProfileConfig',
     'parceria.apps.ParceriaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,8 +54,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'see_website.urls'
-
-PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 TEMPLATES = [
     {
@@ -126,8 +126,32 @@ STATIC_URL = '/static/'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = u'/home/unicampsee/see_website/media'
+# MEDIA_ROOT = u'/home/unicampsee/see_website/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATIC_ROOT = u'/home/unicampsee/see_website/static'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'main/static') ]
+
+#############
+# maro_auth #
+#############
+INDEX_URL_NAME = '/'  # name of your project's index url. Used on redirects
+PROFILE_URL_NAME = 'profile'  # name of your project's profile url. Used on redirects
+SITE_URL = 'http://localhost:8000'  # your site's url, without the '/' at the end. Used on emails
+PROJECT_NAME = 'Unicamp SEE'  # your project's name. Used on emails
+LIMIT_USERS = False  # Whether or not to limit your users to DAC users only. Used during signup evaluation
+PROFILE_APP_NAME = 'see_profile'  # (optional) the name of the app containing your Profile model
+PROFILE_MODEL_NAME = 'ProfileUser'  # (optional) the name of the Profile model you'll want to use and associate with your Users
+FIELDS = ('first_name', 'email', 'last_name')  # (optional) the Profile fields that you want to include in your signup form
+EXCLUDE = ('username', 'password1', 'password2')  # (optional) the Profile fields that you want to exclude from your signup form
+
+DEFAULT_FROM_EMAIL = 'noreply.seeunicamp@gmail.com'
+EMAIL_HOST_USER = 'noreply.seeunicamp@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+SERVER_EMAIL = 'noreply.seeunicamp@gmail.com'
+
+ADMINS = [('Admin', 'noreply.seeunicamp@gmail.com'),]

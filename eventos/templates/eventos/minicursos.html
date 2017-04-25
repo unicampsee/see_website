@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<h1>pagina dos minicursos</h1>
-</body>
-</html>
+{# para adicionar o template base da página, referencie assim :#}
+{# {%  extends '<path da base (ex: eventos/base.html> ' %} #}
+
+{%  block body %}
+    <ul>
+        {% for minicursoItem in all_minicursos %}
+            <li> {{ minicursoItem.descricao }} </li>
+        {% endfor %}
+    </ul>
+{%  endblock %}

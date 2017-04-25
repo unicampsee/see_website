@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<h1>Pagina das visitas</h1>
-</body>
-</html>
+{# para adicionar o template base da página, referencie assim :#}
+{# {%  extends '<path da base (ex: eventos/base.html> ' %} #}
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="eventos">
+    {% for visitaItem in all_visitas %}
+        <div class="row">
+            <h2>{{ visitaItem.titulo}}</h2>
+        </div>
+        </br>
+        <div class="row">
+             {# <h3>{{ palestraItem.palestrante}}</h3> #}
+        </div>
+        </br>
+        <div class="row">
+            <div class="col-md-5">
+                <img src="{{ visitaItem.imagem.url }}" class="img-responsive" >
+            </div>
+            <div class="col-md-7">
+                {# <p>{{ palestraItem.descricao }}</p> #}
+            </div>
+        </div>
+        </br>
+        </br>
+    {% endfor %}
+</div>
+{%  endblock %}

@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<h1>pagina das palestras </h1>
-</body>
-</html>
+{# para adicionar o template base da página, referencie assim :#}
+{# {%  extends '<path da base (ex: eventos/base.html> ' %} #}
+
+{% extends 'main/base.html' %}
+
+{% block css_extend %}
+p, h1, h2, h3 {
+    color: #ffffff; 
+    }
+
+.eventos {
+    margin: 3%
+    }
+
+.elem {
+    background-color: rgba(  0,   0,  0, 0.8);
+    background-clip: padding-box;
+    border: 20px solid rgba( 0, 0, 0, 0.8);
+    border-radius: 10px;
+    }
+
+img.eventos {
+    width: 100%
+}
+{% endblock css_extend %}
+
+{% block content %}
+<div class="eventos">
+    {% for palestraItem in all_palestras %}
+        <div class="elem">
+            <div class="row">
+                <h2>{{ palestraItem.titulo}}</h2>
+            </div>
+            </br>
+            <div class="row">
+                 <h3>{{ palestraItem.palestrante}}</h3>
+            </div>
+            </br>
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="{{ palestraItem.imagem.url }}" class="img-responsive" >
+                </div>
+                <div class="col-md-7">
+                    <p>{{ palestraItem.descricao }}</p>
+                </div>
+            </div>
+        </div>
+        </br>
+        </br>
+        {% endfor %}
+</div>
+{%  endblock %}
