@@ -1,0 +1,103 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div id="fullpage">
+ <div>
+    <div class="section" id="section1">
+        <div class="slide" id="slide1">
+            <div class="intro">
+                <h1>Missão</h1>
+                <p>
+                  A Semana da Engenharia Elétrica busca apresentar aos participantes uma visão mais ampla das diversas áreas da Engenharia e aproximá-los da realidade de cada carreira através de palestras, minicursos e visitas técnicas.
+                </p>
+                <p>
+                  O evento ocorre na primeira semana de aulas, quando a participação é máxima. <br> Na 19ª edição contamos com cerca de 300 inscritos.
+                </p>
+                <p>
+                  Em 2017 a semana ocorrerá entre os dias <font color="#127BCA"><b>31/Jul à 04/Ago.</b></font>
+                </p>
+            </div>
+        </div>
+        <div class="slide" id="slide2">
+          <div class="intro">
+              <img src="{% static "parceria/dadosUnicamp.png" %}"  />
+          </div>
+        </div>
+        <div class="slide" id="slide3">
+          <div class="intro">
+              <img src="{% static "parceria/dadosFeec.png" %}" />
+          </div>
+        </div>
+    </div>
+    <div class="section" id="section2">
+        <div class="slide" id="slide1">
+            <div class="intro">
+                <img src="{% static "parceria/sejaParceiro.png" %}" />
+            </div>
+        </div>
+        <div class="slide" id="slide2">
+          <div class="intro">
+              <img src="{% static "parceria/visitasTecnicas.jpg" %}" />
+          </div>
+        </div>
+        <div class="slide" id="slide3">
+          <div class="intro">
+              <img src="{% static "parceria/palestras.jpg"  %}"/>
+          </div>
+        </div>
+        <div class="slide" id="slide3">
+          <div class="intro">
+              <img src="{% static "parceria/beneficios1.png" %}" />
+          </div>
+        </div>
+        <div class="slide" id="slide3">
+          <div class="intro">
+              <img src="{% static "parceria/beneficios2.png"  %}" />
+          </div>
+        </div>
+        <div class="slide" id="slide3">
+          <div class="intro">
+              <img src="{% static "parceria/parceiros.png"  %}" />
+          </div>
+        </div>
+        <div class="slide" id="slide3">
+          <div class="intro">
+              <img src="{% static "parceria/planosPatrocinio.png" %}"  />
+          </div>
+        </div>
+        <div class="slide" id="slide3">
+          <div class="intro">
+              <h1>Entre em contato: </h1>
+              <p>
+                Formulario de Empresas Backend
+              </p>
+          </div>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="intro">
+            <h1>Agradecemos a sua atenção!</h1>
+            <p>
+             Formulario de Contato Backend
+            </p>
+            <p>
+            <!--
+            Remove logo do fb pra ficar apenas no footer
+            <a href="https://www.facebook.com/semanadeengenharia.eletrica"><img src="{% static "parceria/logofb.png"  %}"id="FB"/></a>
+            <br>Conecte-se conosco!</br>
+            -->
+            </p>
+        </div>
+    </div>
+  </div>
+
+  <div class="footer">
+<a href="https://www.facebook.com/semanadeengenharia.eletrica"><img src="{% static "main/logofbPeq.png"  %}"  id="footerlogos"/></a>
+<div id="footerfontes">Conecte-se conosco!</div>
+<a href="mailto:seeunicamp@gmail.com?Subject=Contato"><img src="{% static "main/logoGmailquadrado.png"  %}" title="seeunicamp@gmail.com" id="footerlogos"/></a>
+  
+  </div>
+</div>
+{% endblock content %}

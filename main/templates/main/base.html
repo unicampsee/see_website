@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% load static %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>20a SEE | Semana de Engenharia Elétrica</title>
+    <meta name="author" content="Vinicius Pedroso" />
+    <meta name="description" content="Pagina da 20a Semana de Engenharia Elétrica da Unicamp" />
+    <meta name="keywords"  content="SEE, Unicamp, Elétrica, semana" />
+    <meta name="Resource-type" content="Document" />
+
+    <!-- REQUISITOS BOTAO 1 -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static "main/jquery.fullPage.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "main/examples.css" %}"  />
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <style>
+
+    h1{
+        font-size: 5em;
+        font-family: 'Oswald-Light', arial,helvetica;
+        color: #127BCA;
+        font-weight: bold;
+        margin:0;
+    }
+    .intro p{
+        font-size: 1.75em;
+        color: #fff;
+        font-family: 'BebasNeueLight', arial,helvetica;
+    }
+
+    /* Textos centralizados em cada seção
+    * --------------------------------------- */
+    .section{
+        text-align:center;
+    }
+
+
+    /* Bottom menu
+    * --------------------------------------- */
+    #infoMenu li a {
+        color: #fff;
+    }
+    @font-face {
+    font-family:"Oswald-Light";
+    src: url("{% static "main/Oswald-Light.ttf" %}") /* CSS3 */
+    }
+    @font-face {
+    font-family:"BebasNeueLight";
+    src: url("{% static "main/BebasNeueLight.ttf" %}") /* CSS3 */
+    }
+    #fullpage {
+        background-image: url('{% static "main/background-see.png" %}');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:top;
+    }
+    img {
+        width: 65%;
+        height: auto;
+    }
+    #FB {
+        width: 100px;
+        height: auto;
+    }
+    #footerlogos {
+        width: 40px;
+        height: auto;
+    }
+    #footerfontes {
+        font-size: 44px;
+        color: #FFFFFF;
+        font-family: 'BebasNeueLight', arial,helvetica;
+        display: inline;
+        padding: 5px;
+    }
+    #menu {
+      float: right; /* Nao funciona? */
+    }
+
+    .footer {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 0.5rem;
+      background: rgb(80, 80, 80); /* Browsers q nao suportam rgba com transparencia */
+      background: rgba(80, 80, 80, .5);
+      text-align: center;
+    }
+
+    #navbarLogo {
+        width: 80px;
+        height: auto;
+    }
+
+    .navbar-default {
+        background-color: #333333;
+        background-image: none;
+        background-repeat: no-repeat;
+    }
+
+    .navbar-button {
+  background-color: #787878;
+  background-image: none;
+  background-repeat: no-repeat;
+ }
+
+
+    </style>
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+
+    <script type="text/javascript" src="{% static "main/scrolloverflow.js" %}"></script>
+
+    <script type="text/javascript" src="{% static "main/jquery.fullPage.js" %}"></script>
+    <script type="text/javascript" src="{% static "main/examples.js" %}"></script>
+
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                menu: '#menu',
+                anchors: ['Home', 'Missao', 'Parceria', 'Contato'],
+                //sectionsColor: ['#127BCA', '#1BBC9B', '#7E8F7C'],
+                autoScrolling: false,
+                fitToSection: false // Corrige bug de subir pra seção inicial
+            });
+        });
+    </script>
+    
+</head>
+<body>
+
+<!--
+<ul id="menu">
+    <li data-menuanchor="Home"><a href="Home">Home</a></li>
+    <li data-menuanchor="Missao"><a href="#Missao">Quem somos?</a></li>
+    <li data-menuanchor="Parceria"><a href="#Parceria">Seja um parceiro</a></li>
+    <li data-menuanchor="Contato"><a href="#Contato">Contato</a></li>
+</ul>
+-->
+
+
+<nav class="navbar navbar-toggleable-md navbar-inverse navbar-default">
+  <button class="navbar-toggler navbar-toggler-right navbar-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+  <img src="{% static "main/logoNavbar.png"  %}"  id="navbarLogo"/></a>
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#section0">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section1">Quem somos?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section2">Parceria</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section3">Contato</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<div id="fullpage">
+  <!-- Pagina Home, logo da SEE -->
+    <div class="section " id="section0">
+        <div class="intro">
+            <img src="{% static "main/logoFullBranco.png" %}"  />
+        </div>
+    </div>
+    {% block content %}{% endblock content %}
+</div>
+    
+
+</body>
+</html>
